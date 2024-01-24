@@ -6,6 +6,17 @@ const app = express(); //instance to express
 const port = process.env.PORT || 3000; //declaring a port with a local variable
 
 app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader('Access-Controll-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
+
 app.use('/', require('./routes'));//include routes
 
 
@@ -15,7 +26,6 @@ mongodb.initDb((err) => {
         console.log(err);
     }
     else{
-        app.listen(port, () => (console.log(`Database is lsitenning and node running on port ${port}`)));
+        app.listen(port, () => (console.log(`Database is listenning and node running on port ${port}`)));
     }
 });
-//comment
