@@ -11,9 +11,9 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "email": "test100@example.com",
+    "email": "test500@example.com",
     "username": "test@test.com",
-    "name": "Hello4",
+    "name": "Hello5",
     "ipaddress": "94.121.163.63"
 }
 
