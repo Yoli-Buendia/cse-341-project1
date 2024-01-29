@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./data/database');//add mongo library
 const app = express(); //instance to express
 
-const port = process.env.PORT || 3000; //declaring a port with a local variable
+const port = process.env.PORT || 5000; //declaring a port with a local variable
 
 app.use(bodyParser.json());
 
